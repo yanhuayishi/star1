@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>李佳</title>
+</head>
+<style>
+    .center{
+        position: absolute;
+        width: 180px;
+        height: 180px;
+    }
+    html,body{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+    #wrap{
+        width: 200px;
+        height:200px;
+        transform: rotateY(0deg) rotateZ(0deg)  translateZ(-90px);
+        transform-style: preserve-3d;
+        transition: transform 10s linear;
+
+    }
+    #d1{
+        background: red;
+    }
+    #d2{
+        background: blue;
+        transform-origin: 0 50%;
+        transform: rotateY(-90deg);
+     }
+    #d3{
+        background: pink; 
+        transform-origin: 100% 0;
+        transform: rotateY(90deg);
+
+
+    }
+    #d4{
+        background: darkgreen;
+        transform-origin: 50% 0;
+        transform: rotateX(90deg);
+
+    }
+    #d5{
+        background: gold;
+        transform-origin: 50% 100%;
+        transform: rotateX(-90deg);
+
+    }
+    #d6{
+        background: firebrick;
+       transform-origin: 50% 50%;
+        transform: translateZ(180px);
+    }
+
+</style>
+<body >
+<div id="wrap" >
+    <div id="d1" class="wall center"><img src="F:\tupian\4.jpg"  height="180px" width="180px"/></div>
+    <div id="d2" class="wall center"> <img src="F:\tupian\5.jpg"  height="180px" width="180px"/></div>
+    <div id="d3" class="wall center"> <img src="F:\tupian\6.jpg"  height="180px" width="180px"/></div>
+    <div id="d4" class="wall center"><img src="F:\tupian\7.jpg"  height="180px" width="180px"/></div>
+    <div id="d5" class="wall center"> <img src="F:\tupian\8.jpg"  height="180px" width="180px"/></div>
+    <div id="d6" class="wall center"> <img src="F:\tupian\9.jpg"  height="180px" width="180px"/></div>
+</div>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        var warp = document.getElementById("wrap"), x=0, z=0;
+        function go(){
+            z+=400;
+            x+=600;
+            warp.style.webkitTransform = "-webkit-rotateY("+z+"deg) rotateZ("+x+"deg)  translateZ(-90px)";
+            warp.style.transform = "rotateY("+z+"deg) rotateZ("+x+"deg)  translateZ(-90px)";
+        setTimeout(go,3000)
+        }
+        go();
+    }
+</script>
+
